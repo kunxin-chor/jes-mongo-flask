@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Listings and Reviews</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Beds</td>
+            <td>Country</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for l in listings %}
+        <tr>
+            <td>{{l.name}}</td>
+            <td>{{l.beds}}</td>
+            <td>{{l.address.country}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
