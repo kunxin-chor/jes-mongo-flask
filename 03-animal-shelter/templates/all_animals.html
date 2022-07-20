@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Animals</h1>
+<a href="{{ url_for('create_animal') }}" class="btn btn-primary">New Animal</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Breed</th>
+            <th>Species</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for a in animals %}
+        <tr>
+            <td>{{a.animal_name}}</td>
+            <td>{{a.age}}</td>
+            <td>{{a.breed}}</td>
+            <td>{{a.species}}</td>
+            <td>
+                <a href="{{ url_for('update_animal', animal_id=a._id )}}" class="btn btn-primary btn-sm">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

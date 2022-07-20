@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Update Animal</h1>
+<form method="POST">
+    <div>
+        <label>Animal Name:</label>
+        <input type="text" name="animal_name" class="form-control" value="{{animal.animal_name}}"/>
+    </div>
+    <div>
+        <label>Age:</label>
+        <input type="number" name="age" class="form-control" value="{{animal.age}}"/>
+    </div>
+    <div>
+        <label>Breed:</label>
+        <input type="text" name="breed" class="form-control" value="{{animal.breed}}"/>
+    </div>
+    <div>
+        <label>Species:</label>
+        <input type="text" name="species" class="form-control" value="{{animal.species}}"/>
+    </div>
+    <input type="submit" class="btn btn-primary my-3"/>
+</form>
+{% endblock %}

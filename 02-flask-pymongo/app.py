@@ -3,13 +3,12 @@ import pymongo
 import ssl
 import os
 from dotenv import load_dotenv
-
+import certifi
 
 load_dotenv()
 
 # create a connection to the Mongo database
-client = pymongo.MongoClient(os.environ.get('MONGO_URI'),
-                             ssl_cert_reqs=ssl.CERT_NONE)
+client = pymongo.MongoClient(os.environ.get('MONGO_URI'), tlsCAFile=certifi.where())
 
 db = client["sample_airbnb"]
 # end connecting to database
