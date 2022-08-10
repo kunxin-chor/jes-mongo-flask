@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Customers</h1>
+
+<ul>
+    {% for c in customers %}
+    <li>{{c.name}}  <a href="{{url_for('update_customer', customer_id=c._id)}}">Edit</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

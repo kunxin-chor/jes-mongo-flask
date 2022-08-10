@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username" class="form-control" value="{{customer.username}}"/>
+    </div>
+    <div>
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control" value="{{customer.name}}"/>
+    </div>
+    <div>
+        <label>Address:</label>
+        <input type="text" name="address" class="form-control" value="{{customer.address}}"/>
+    </div>
+    <div>
+        <label>Birth Date:</label>
+        <input type="date" name="birthdate" class="form-control" value="{{customer.birthdate.strftime('%Y-%m-%d')}}"/>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="text" name="email" class="form-control" value="{{customer.email}}"/>
+    </div>
+    <input type="submit" class="btn btn-primary my-3"/>
+</form>
+{% endblock %}
